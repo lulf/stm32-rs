@@ -28,6 +28,24 @@ RCC:
         bitOffset: 1
         bitWidth: 1
         access: read-write
+  APB1SMENR1:
+    _delete:
+      - USART1SMEN
+    _modify:
+      USART2SMEN:
+        bitOffset: 17
+    _add:
+      USART3SMEN:
+        description: USART3 clocks enable during Sleep and Stop modes
+        bitOffset: 18
+        bitWidth: 1
+        access: read-write
+    _add:
+      USART4SMEN:
+        description: USART4 clocks enable during Sleep and Stop modes
+        bitOffset: 19
+        bitWidth: 1
+        access: read-write
 
 # cf. <https://github.com/adamgreig/stm32-rs/issues/37>
 # we call the resulting peripheral `USB` instead of `USB-FS`
